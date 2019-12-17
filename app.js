@@ -1,5 +1,5 @@
 // General Variables
-let counter = false;
+let status = false;
 let display = document.querySelector('.display');
 const playPomodoro = document.querySelector('.play');
 const stopPomodoro = document.querySelector('.stop');
@@ -11,15 +11,15 @@ let thirty = 60 * 30;
 playPomodoro.addEventListener('click', () => {
   playApp();
   // If the  app had completed its 4 pomodoros
-  if(counter == true) {
+  if(status == true) {
     thirtyMinutes();
   }
-  counter = false;
+  status = false;
 });
 
 // Stop app
 stopPomodoro.addEventListener('click', () => {
-  console.log('done');
+
 })
 
 
@@ -29,15 +29,15 @@ function playApp() {
     twentyFive(twentyFiveMinutes, display);
     fiveMinutes(five, display);
     thirtyMinutes(thirty, display);
-    counter = true;
+    status = true;
   }
 }
 
 
 
 // 25 minutes
-function twentyFive(duration, display) {
-  let timer = duration, minutes, seconds;
+function twentyFive(durationTwentyFiveMinutes, display) {
+  let timer = durationTwentyFiveMinutes, minutes, seconds;
 
   setInterval(function() {
     let minutes = parseInt(timer / 60, 10);
@@ -47,7 +47,7 @@ function twentyFive(duration, display) {
     seconds = seconds < 10 ? "0" + seconds : seconds;
     display.textContent = minutes + ":" + seconds;
     if (--timer < 0) {
-      timer = duration;
+      timer = durationTwentyFiveMinutes;
       }
   }, 1000);
 
@@ -55,10 +55,10 @@ function twentyFive(duration, display) {
 }
 
 // 5 minutes
-function fiveMinutes(duration, display) {
-  let timer = duration, minutes, seconds;
+function fiveMinutes(durationFiveMinutes, display) {
+  let timer = durationFiveMinutes, minutes, seconds;
 
-  setInterval(function() {
+    setInterval(function() {
     let minutes = parseInt(timer / 60, 10);
     let seconds = parseInt(timer % 60, 10);
 
@@ -66,14 +66,14 @@ function fiveMinutes(duration, display) {
     seconds = seconds < 10 ? "0" + seconds : seconds;
     display.textContent = minutes + ":" + seconds;
     if (--timer < 0) {
-      timer = duration;
+      timer = duratiionFiveMinutes;
       }
   }, 1000);
 }
 
 // 30 minutes
-function thirtyMinutes(duration, display) {
-  let timer = duration, minutes, seconds;
+function thirtyMinutes(durationThirtyMinutes, display) {
+  let timer = durationThirtyMinutes, minutes, seconds;
 
   setInterval(function() {
     let minutes = parseInt(timer / 60, 10);
@@ -83,7 +83,7 @@ function thirtyMinutes(duration, display) {
     seconds = seconds < 10 ? "0" + seconds : seconds;
     display.textContent = minutes + ":" + seconds;
     if (--timer < 0) {
-      timer = duration;
+      timer = durationThirtyMinutes;
       }
   }, 1000);
 }
