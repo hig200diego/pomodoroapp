@@ -1,5 +1,5 @@
 // General Variables
-let status = false;
+let status = false; //
 let display = document.querySelector('.display');
 const playPomodoro = document.querySelector('.play');
 const stopPomodoro = document.querySelector('.stop');
@@ -7,12 +7,21 @@ let twentyFiveMinutes = 60 * 25;
 let five = 60 * 5;
 let thirty = 60 * 30;
 
+// Play App
+function playApp() {
+  for (let i = 0; i <= 3; i++) {
+    twentyFive(twentyFiveMinutes, display);
+    fiveMinutes(five, display);
+    status = true;
+  }
+}
+
 // Start App
 playPomodoro.addEventListener('click', () => {
   playApp();
-  // If the  app had completed its 4 pomodoros
+  // If the  app had completed 4 pomodoros
   if(status == true) {
-    thirtyMinutes();
+  thirtyMinutes();
   }
   status = false;
 });
@@ -22,16 +31,6 @@ stopPomodoro.addEventListener('click', () => {
 
 })
 
-
-// Play App
-function playApp() {
-  for (let i = 0; i <= 3; i++) {
-    twentyFive(twentyFiveMinutes, display);
-    fiveMinutes(five, display);
-    thirtyMinutes(thirty, display);
-    status = true;
-  }
-}
 
 
 
@@ -48,7 +47,7 @@ function twentyFive(durationTwentyFiveMinutes, display) {
     display.textContent = minutes + ":" + seconds;
     if (--timer < 0) {
       timer = durationTwentyFiveMinutes;
-      }
+    }
   }, 1000);
 
 
@@ -66,7 +65,7 @@ function fiveMinutes(durationFiveMinutes, display) {
     seconds = seconds < 10 ? "0" + seconds : seconds;
     display.textContent = minutes + ":" + seconds;
     if (--timer < 0) {
-      timer = duratiionFiveMinutes;
+      timer = durationFiveMinutes;
       }
   }, 1000);
 }
