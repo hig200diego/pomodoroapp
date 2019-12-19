@@ -44,7 +44,7 @@ function twentyFive(durationTwentyFiveMinutes, display) {
 
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
-    display.textContent = minutes + ":" + seconds;
+    display.innerHTML = minutes + ":" + seconds;
     if (--timer < 0) {
       timer = durationTwentyFiveMinutes;
     }
@@ -63,7 +63,7 @@ function fiveMinutes(durationFiveMinutes, display) {
 
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
-    display.textContent = minutes + ":" + seconds;
+    display.innerHTML = minutes + ":" + seconds;
     if (--timer < 0) {
       timer = durationFiveMinutes;
       }
@@ -80,7 +80,7 @@ function thirtyMinutes(durationThirtyMinutes, display) {
 
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
-    display.textContent = minutes + ":" + seconds;
+    display.innerHTML = minutes + ":" + seconds;
     if (--timer < 0) {
       timer = durationThirtyMinutes;
       }
