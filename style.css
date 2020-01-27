@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #C06C84;
+    background-color: #C55E5E;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -47,7 +47,7 @@ ion-icon {
     cursor: pointer;
 }
 
-p { 
+p {
     color: #fff;
     font-weight: lighter;
     margin-top: 30px;
