@@ -9,6 +9,40 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+h1 {
+  font-family: 'Patrick Hand', cursive;
+  text-align: center;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.nav-container {
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+#navbar ul li {
+  background-color: #fff;
+  color: #C55E5E;
+  padding: 10px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+
+  transition: background-color 0.5s;
+}
+
+#navbar ul li:hover {
+  background-color: #fab1a0;
+}
+
 .container {
     max-width: 300px;
     height: 500px;
