@@ -16,6 +16,10 @@ h1 {
   font-size: 3rem;
 }
 
+.avoid-clicks {
+    pointer-events: none;
+}
+
 .nav-container {
     max-width: 300px;
     margin: 0 auto;
