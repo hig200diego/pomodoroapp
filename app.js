@@ -13,6 +13,8 @@ var thirtyMinutes = 60 * 30;
 // Start Pomodoro timer 25 minutes
 pomodoro.addEventListener('click', () => {
   startTimer(twentyFiveMinutes, display);
+  stopClick(shortBreak, longBreak);
+
 });
 
 // Start Pomodoro short break
@@ -30,6 +32,12 @@ stopPomodoro.addEventListener('click', () => {
   
 })
 
+
+// Stopping Clicks Events
+function stopClick(btn1, btn2) {
+  btn1.classList.add('avoid-clicks');
+  btn2.classList.add('avoid-clicks');
+}
 
 
 
