@@ -20,6 +20,9 @@ h1 {
     pointer-events: none;
 }
 
+.play {display: none;}
+.stop {display: none;}
+
 .nav-container {
     max-width: 300px;
     margin: 0 auto;
