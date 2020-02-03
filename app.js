@@ -7,7 +7,7 @@ const pomodoro = document.querySelector('#pomodoro');
 const shortBreak = document.querySelector('#shortbreak');
 const longBreak = document.querySelector('#longbreak')
 var twentyFiveMinutes = 60 * 25;
-var fiveMinutes = 60 * 5;
+var fiveMinutes = 60 * 1;
 var thirtyMinutes = 60 * 30;
 
 
@@ -39,7 +39,7 @@ longBreak.addEventListener('click', () => {
 
 // Stop Pomodoro
 stopPomodoro.addEventListener('click', () => {
-  
+  clearInterval(startTimer);
 });
 
 
@@ -53,7 +53,7 @@ function stopClick(btn1, btn2) {
 
 function startTimer(duration, display) {
   var timer = duration, min, sec;
-  setInterval(function() {
+  var countingDown = setInterval(function() {
     min = parseInt(timer / 60, 10);
     sec = parseInt(timer % 60, 10);
 
@@ -64,6 +64,11 @@ function startTimer(duration, display) {
 
     if (--timer < 0) {
       timer = duration;
+    }
+    // stops the counting variable when it hits zero
+    if (timer == 0) {
+      clearInterval(countingDown); 
+      display.innerHTML = "00:00";
     }
 
     
