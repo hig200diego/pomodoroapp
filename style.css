@@ -20,7 +20,7 @@ h1 {
     pointer-events: none;
 }
 
-.play {display: none;}
+.pause {display: none;}
 .stop {display: none;}
 
 .nav-container {

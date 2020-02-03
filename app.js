@@ -1,6 +1,7 @@
 // General Variables
 var display = document.querySelector('.display');
 //const playPomodoro = document.querySelector('.play');
+const pause = document.querySelector('.pause');
 const stopPomodoro = document.querySelector('.stop');
 const pomodoro = document.querySelector('#pomodoro');
 const shortBreak = document.querySelector('#shortbreak');
@@ -14,23 +15,32 @@ var thirtyMinutes = 60 * 30;
 pomodoro.addEventListener('click', () => {
   startTimer(twentyFiveMinutes, display);
   stopClick(shortBreak, longBreak);
+  pause.style.display = 'block';
+  stopPomodoro.style.display = 'block';
 
 });
 
 // Start Pomodoro short break
 shortBreak.addEventListener('click', () => {
   startTimer(fiveMinutes, display);
-})
+  stopClick(pomodoro, longBreak);
+  pause.style.display = 'block';
+  stopPomodoro.style.display = 'block';
+  
+});
 
 // Start Pomodoro Long break
 longBreak.addEventListener('click', () => {
   startTimer(thirtyMinutes, display);
-})
+  stopClick(pomodoro, shortBreak);
+  pause.style.display = 'block';
+  stopPomodoro.style.display = 'block';
+});
 
 // Stop Pomodoro
 stopPomodoro.addEventListener('click', () => {
   
-})
+});
 
 
 // Stopping Clicks Events
@@ -55,5 +65,7 @@ function startTimer(duration, display) {
     if (--timer < 0) {
       timer = duration;
     }
+
+    
   }, 1000);
 }
