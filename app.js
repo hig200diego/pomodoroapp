@@ -49,6 +49,14 @@ function stopClick(btn1, btn2) {
   btn2.classList.add('avoid-clicks');
 }
 
+// Remove .avoid-clicks class
+function removeAvoidClick(btn1, btn2, btn3) {
+  btn1.classList.remove('avoid-clicks');
+  btn2.classList.remove('avoid-clicks');
+  btn3.classList.remove('avoid-clicks');
+}
+
+// main start timer function
 function startTimer(duration, display) {
   var timer = duration, min, sec;
   var countingDown = setInterval(function() {
@@ -68,6 +76,7 @@ function startTimer(duration, display) {
       clearInterval(countingDown); 
       display.innerHTML = "00:00";
       audioBeep.play();
+      removeAvoidClick(pomodoro,shortBreak,longBreak);
     }
 
     
