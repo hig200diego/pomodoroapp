@@ -6,8 +6,9 @@ const stopPomodoro = document.querySelector('.stop');
 const pomodoro = document.querySelector('#pomodoro');
 const shortBreak = document.querySelector('#shortbreak');
 const longBreak = document.querySelector('#longbreak')
+const audioBeep = document.querySelector('#audioBeep');
 var twentyFiveMinutes = 60 * 25;
-var fiveMinutes = 60 * 1;
+var fiveMinutes = 60 * 5;
 var thirtyMinutes = 60 * 30;
 
 
@@ -42,14 +43,11 @@ stopPomodoro.addEventListener('click', () => {
   clearInterval(startTimer);
 });
 
-
 // Stopping Clicks Events
 function stopClick(btn1, btn2) {
   btn1.classList.add('avoid-clicks');
   btn2.classList.add('avoid-clicks');
 }
-
-
 
 function startTimer(duration, display) {
   var timer = duration, min, sec;
@@ -69,6 +67,7 @@ function startTimer(duration, display) {
     if (timer == 0) {
       clearInterval(countingDown); 
       display.innerHTML = "00:00";
+      audioBeep.play();
     }
 
     
